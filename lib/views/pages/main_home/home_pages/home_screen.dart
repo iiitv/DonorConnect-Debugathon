@@ -71,14 +71,18 @@ class _HomeScreenState extends State<HomeScreen> {
                     title: _text.donate,
                     col: const Color.fromARGB(255, 255, 122, 122),
                     onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => LocateBloodBanks()))
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (ctx) => LocateBloodBanks()));
                     },
                   ),
                   HomeCardConst(
                     title: _text.required,
                     col: const Color.fromARGB(255, 167, 165, 252),
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (ctx)=> RequiredScreen()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (ctx) => RequiredScreen()));
                     },
                   ),
                 ],
@@ -92,8 +96,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Icons.search,
                   size: 23,
                 ),
-                onPressed: (){},
-                
+                onPressed: () {},
               ),
               HomeCard(
                 title: _text.learn_about_donating,
@@ -125,11 +128,13 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(onPressed: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => ChatBot()));
-      },
-      child: const Icon(Icons.chat),
-    ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => ChatBot()));
+        },
+        child: const Icon(Icons.chat),
+      ),
     );
   }
 }
