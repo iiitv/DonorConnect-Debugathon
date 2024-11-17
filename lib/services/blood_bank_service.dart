@@ -13,6 +13,9 @@ class BloodBankService {
 
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
+      if(data == null){
+        return []       //issue 6
+      }
       return data['records']; // Modify as per the API response structure
     } else {
       return [];

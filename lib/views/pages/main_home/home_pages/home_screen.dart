@@ -76,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     title: _text.required,
                     col: const Color.fromARGB(255, 167, 165, 252),
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (ctx)=> RequiredScreen()));
+                      Navigator.push(context, MaterialPageRoute(builder: (ctx)=> LocateBloodBanks())); // issur 8
                     },
                   ),
                 ],
