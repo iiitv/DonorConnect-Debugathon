@@ -3,6 +3,7 @@ import 'package:donorconnect/cubit/profile/profile_cubit.dart';
 import 'package:donorconnect/cubit/profile/profile_state.dart';
 import 'package:donorconnect/language/helper/language_extention.dart';
 import 'package:donorconnect/views/common_widgets/toggle_button.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -41,7 +42,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         actions: [
           IconButton(
             onPressed: () {
-              
+              AuthCubit(_auth, _firestore).signOut(context);
             },
             icon: const Icon(
               Icons.logout,
@@ -60,7 +61,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   Column(
                     children: [
                       Text(
-                        "ALICE",
+                        widget.name,
                         style: const TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
@@ -179,7 +180,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   // theme-toggle button
                   BlocBuilder<ThemeCubit, Themestate>(
                     builder: (context, themeState) {
-                      final isDarkMode = themeState.themeData.brightness == Brightness.dark;
+                      final isDarkMode =
+                          themeState.themeData.brightness == Brightness.dark;
                       return ThemeToggleButton(
                         switchValue: isDarkMode,
                       );

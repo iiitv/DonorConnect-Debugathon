@@ -503,7 +503,7 @@ class _AddCampFormState extends State<AddCampForm> {
       lastDate: DateTime(2100),
     );
 
-    if (pickedDate != null && pickedDate != _selectedDate) {
+    if (pickedDate != _selectedDate) {
       setState(() {
         _selectedDate = pickedDate; // Store the selected date
       });
