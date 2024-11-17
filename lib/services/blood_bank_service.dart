@@ -10,9 +10,12 @@ class BloodBankService {
 
   Future<List<dynamic>> getBloodBanks() async {
     final response = await http.get(Uri.parse(apiUrl));
-
+    
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
+      if (data["records"]==null){
+        return [];
+      }
       return data['records']; // Modify as per the API response structure
     } else {
       return [];
