@@ -70,7 +70,10 @@ class _HomeScreenState extends State<HomeScreen> {
                   HomeCardConst(
                     title: _text.donate,
                     col: const Color.fromARGB(255, 255, 122, 122),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (ctx)=> LocateBloodBanks()));
+                    },
+
                   ),
                   HomeCardConst(
                     title: _text.required,
