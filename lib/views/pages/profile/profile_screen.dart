@@ -60,7 +60,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   Column(
                     children: [
                       Text(
-                        widget.name,
+                        widget.name,    //issue 9
                         style: const TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
