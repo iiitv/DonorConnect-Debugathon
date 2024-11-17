@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:donorconnect/views/controllers/onboarding/onboarding_controller.dart';
 import 'package:http/http.dart' as http;
 
 const String apiKey =
@@ -13,6 +14,9 @@ class BloodBankService {
 
     if (response.statusCode == 200) {
       final data = jsonDecode(response.body);
+      if (data['records'] == null || data['records'].isBlank) {
+        return []; // as no records are found.
+      }
       return data['records']; // Modify as per the API response structure
     } else {
       return [];
